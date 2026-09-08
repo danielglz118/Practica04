@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -23,8 +24,11 @@ import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -49,51 +53,32 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             MiAPP_01Theme {
-                Formulario()
+                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                    Screen()
+                }
             }
         }
     }
-}
 
-@Composable
-fun Formulario() {
 
-    var contador by remember { mutableStateOf(0) }
-
-    Column(
-        modifier = Modifier.fillMaxSize(),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
-    ) {
-
-        Box(
-            modifier = Modifier
-                .size(150.dp)
-                .background(Color.Blue, CircleShape),
-            contentAlignment = Alignment.Center
+    @Composable
+    fun Screen() {
+        Column(
+            modifier = Modifier.fillMaxSize(),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
         ) {
-            Text(
-                text = contador.toString(),
-                fontSize = 48.sp,
-                color = Color.White
-            )
-        }
+            Button(onClick = {}) {
+                Icon(
+                    imageVector = Icons.Filled.Add,
+                    contentDescription = "Prueba",
+                    tint = Color.Red,
+                    modifier = Modifier.size(50.dp)
+                )
 
-        Spacer(modifier = Modifier.height(40.dp))
-
-        Button(
-            onClick = {},
-            modifier = Modifier
-                .width(200.dp)
-                .height(60.dp),
-            colors = ButtonDefaults.buttonColors(
-                containerColor = Color(0xFF536A99)
-            )
-        ) {
-            Text(
-                "Sumar",
-                fontSize = 24.sp
-            )
+                Spacer(modifier = Modifier.height(40.dp))
+                Text("Favorito", fontSize = 30.sp)
+            }
         }
     }
 }
