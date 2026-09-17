@@ -26,6 +26,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import coil3.compose.AsyncImage
+import coil3.compose.AsyncImage
 import com.example.miapp_01.ui.theme.MiAPP_01Theme
 
 class MainActivity : ComponentActivity() {
@@ -58,11 +60,12 @@ class MainActivity : ComponentActivity() {
                 modifier = Modifier.size(300.dp)
             )
             Spacer(modifier = Modifier.width(20.dp))
-            Image(
-                imageVector= ImageVector.vectorResource(R.drawable.santos_logo_1),
-                contentDescription = "The Best",
-                contentScale= ContentScale.Fit,
-                modifier = Modifier.size(300.dp)
+
+            AsyncImage(
+                model = "https://i.pinimg.com/736x/f8/01/71/f801716d5be112d2a9b48da3eb663c01.jpg",
+                contentDescription = "Imagen tomada de internet",
+                modifier = Modifier.size(50.dp),
+                contentScale = ContentScale.Crop
             )
         }
     }
