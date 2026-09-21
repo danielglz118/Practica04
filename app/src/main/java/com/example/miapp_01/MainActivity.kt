@@ -51,85 +51,8 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             MiAPP_01Theme {
-                 Contenido()
+
                 }
             }
         }
     }
-
-@Composable
-fun Contenido(){
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .wrapContentSize(Alignment.Center),
-        horizontalAlignment = Alignment.CenterHorizontally
-    ){
-        BotonNormal()
-        Espacio()
-        BotonNormal2()
-        Espacio()
-        BotonTexto()
-        Espacio()
-        BotonOutLine()
-        Espacio()
-        BotonFlotante()
-        //BotonIcono()
-    }
-}
-
-@Composable
-fun Espacio(){
-    Spacer(modifier = Modifier.size(10.dp))
-}
-
-@Composable
-fun BotonNormal(){
-    Button(onClick={}){
-        Text("Mi Boton", fontSize = 30.sp)
-    }
-}
-
-@Composable
-fun BotonNormal2(){
-    Button(onClick={}, enabled = false){
-        Text("Mi Boton", fontSize = 30.sp)
-    }
-}
-
-@Composable
-fun BotonTexto() {
-    TextButton(onClick = {}) {
-        Text("Mi Boton", fontSize = 30.sp)
-    }
-}
-
-@Composable
-fun BotonOutLine() {
-    OutlinedButton(onClick = {}, border = BorderStroke(3.dp,Color.Red)) {
-        Text("Mi Boton", fontSize = 30.sp)
-    }
-}
-
-//@Composable
-//fun BotonIcono() {
-//    IconButton(onClick = {}) {
-//        Icon(
-//           painter = painterResource(R.drawable.home),
-//        )
-//    }
-//}
-
-@Composable
-fun BotonFlotante() {
-    FloatingActionButton(onClick = {},
-        containerColor = Color.Red,
-        shape = CircleShape,
-        contentColor = Color.Blue) {
-        Icon(
-            painter = painterResource(R.drawable.santos),
-            contentDescription = "",
-            modifier = Modifier.size(30.dp)
-        )
-    }
-}
