@@ -9,16 +9,19 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.style.LineHeightStyle
 import androidx.navigation.NavController
 
 @Composable
 fun Home(navController: NavController){
     Column(
-        modifier = Modifier.fillMaxSize().wrapContentSize(),
-        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier=Modifier
+            .fillMaxSize()
+            .wrapContentSize(),
+        horizontalAlignment =Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ){
-        Button(onClick = {}){
+        Button(onClick = {navController.navigate("Detail")}){
             Text("Details")
         }
     }
