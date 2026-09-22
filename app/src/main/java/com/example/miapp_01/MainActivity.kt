@@ -43,6 +43,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
 import coil3.compose.AsyncImage
+import navigation.Navigate
 import com.example.miapp_01.ui.theme.MiAPP_01Theme
 
 class MainActivity : ComponentActivity() {
@@ -51,7 +52,7 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             MiAPP_01Theme {
-
+                navigation.Navigate()
                 }
             }
         }

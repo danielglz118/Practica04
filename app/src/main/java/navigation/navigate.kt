@@ -4,8 +4,9 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import uia.Detail
 import uia.Home
+import uia.Detail
+
 
 @Composable
 fun Navigate(){
